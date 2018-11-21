@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -15,21 +15,25 @@ const Heading = styled.h1`
   text-align: center;
 `
 
-export default ({ data }) => (
-  <Container>
-    <Heading>{data.site.siteMetadata.title}</Heading>
-    <p>{data.allMarkdownRemark.totalCount} Posts</p>
-    <hr />
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
-        <h3>
-          {node.frontmatter.title}{' '}
-          <span>- {node.frontmatter.date}</span>
-        </h3>
-      </div>
-    ))}
-  </Container>
-)
+export default ({ data }) => {
+  return (
+    <Container>
+      <Heading>{data.site.siteMetadata.title}</Heading>
+      <p>{data.allMarkdownRemark.totalCount} Posts</p>
+      <hr />
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id}>
+          <Link to={node.fields.slug}>
+            <h3>
+              {node.frontmatter.title}{' '}
+              <span>- {node.frontmatter.date}</span>
+            </h3>
+          </Link>
+        </div>
+      ))}
+    </Container>
+  )
+}
 
 export const query = graphql`
   query {
@@ -46,6 +50,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
           }
           excerpt
         }
