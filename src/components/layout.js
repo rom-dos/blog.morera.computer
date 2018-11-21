@@ -8,11 +8,12 @@ const Container = styled.div`
 `
 
 const Heading = styled.h1`
-  color: blue;
-  font-family: Helvetica;
+  color: #284253;
+  font-family: 'Karla', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   margin: 5rem auto 6rem auto;
   text-align: center;
+  text-decoration: none;
 `
 
 export default ({ children }) => (
@@ -28,7 +29,7 @@ export default ({ children }) => (
     `}
     render={data => (
       <Container>
-        <Link to={`/`}>
+        <Link to={`/`} style={{ textDecoration: `none` }}>
           <Heading>{data.site.siteMetadata.title}</Heading>
         </Link>
         {children}
