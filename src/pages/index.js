@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -14,9 +15,19 @@ const Heading = styled.h1`
   text-align: center;
 `
 
-export default () => (
+export default ({ data }) => (
   <Container>
-    <Heading>blog.morera.computer</Heading>
+    <Heading>{data.site.siteMetadata.title}</Heading>
     <hr />
   </Container>
 )
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
