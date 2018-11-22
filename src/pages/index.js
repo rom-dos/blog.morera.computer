@@ -97,7 +97,17 @@ export default ({ data }) => {
               {node.frontmatter.title}{' '}
             </PostTitle>
           </Link>
-          <PostTags>unix, macOS</PostTags>
+          <PostTags>
+            {node.frontmatter.tags.length > 1 ? (
+              node.frontmatter.tags.map((tag, i) => {
+                if (i === node.frontmatter.tags.length - 1) {
+                  return tag
+                } else {
+                  return tag.concat(', ')
+                }
+              })
+            ) : node.frontmatter.tags}
+          </PostTags>
           <PostDate>{node.frontmatter.date.toLowerCase()}</PostDate>
         </GridContainer>
       ))}
@@ -121,6 +131,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMM DD YYYY")
+            tags
           }
           fields {
             slug
