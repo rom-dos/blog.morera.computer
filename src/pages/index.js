@@ -3,9 +3,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import { colorPalette } from '../styles/color'
-
-const mono = `"Inconsolata", "Lucida Console", Monaco, monospace`
-const sansSerif = `'Karla', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif`
+import { mono, sansSerif, Spectrum } from '../styles/styles'
 
 const PostCount = styled.p`
   color: ${colorPalette.blue8};
@@ -33,14 +31,14 @@ const PostTags = styled.h3`
   font-style: italic;
   font-weight: 400;
   position: relative;
-  top: 8px;
+  top: 4px;
 `
 
 const PostDate = styled.h3`
   color: ${colorPalette.blue9};
   display: inline-block;
   font-family: ${sansSerif};
-  font-size: 1rem;
+  font-size: 14px; 
   font-weight: 400;
   text-align: right;
 `
@@ -63,22 +61,6 @@ const GridContainer = styled.div`
   line-height: 1.2;
   margin-bottom: -1.4rem;
   position: relative;
-`
-
-const Spectrum = styled.div`
-  background: linear-gradient(
-    to right, 
-    ${colorPalette.blue0}, 
-    ${colorPalette.blue1},
-    ${colorPalette.blue2},
-    ${colorPalette.blue3},
-    ${colorPalette.blue4},
-    ${colorPalette.blue5},
-    ${colorPalette.blue6},
-    ${colorPalette.blue7},
-    ${colorPalette.blue8},
-    ${colorPalette.blue9});
-  height: 8px;
 `
 
 export default ({ data }) => {
@@ -108,7 +90,7 @@ export default ({ data }) => {
               })
             ) : node.frontmatter.tags}
           </PostTags>
-          <PostDate>{node.frontmatter.date.toLowerCase()}</PostDate>
+          <PostDate>{node.frontmatter.date}</PostDate>
         </GridContainer>
       ))}
     </Layout>

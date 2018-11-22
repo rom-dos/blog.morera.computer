@@ -4,8 +4,10 @@ import styled from 'styled-components'
 import { colorPalette } from '../styles/color'
 
 const Container = styled.div`
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 700px;
+  padding: 0 0.8rem;
 `
 
 const Heading = styled.h1`
