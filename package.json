@@ -18,6 +18,8 @@
     "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "styled-components": "^4.1.1"
+    "styled-components": "^4.1.1",
+    "typeface-inconsolata": "0.0.54",
+    "typeface-karla": "0.0.54"
   }
 }

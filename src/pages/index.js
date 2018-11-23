@@ -4,11 +4,13 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import { colorPalette } from '../styles/color'
 import { mono, sansSerif, Spectrum } from '../styles/styles'
+require('typeface-karla')
+require('typeface-inconsolata')
 
 const PostCount = styled.p`
   color: ${colorPalette.blue8};
   font-family: ${mono};
-  font-size: 0.8rem;
+  font-size: 16px;
 `
 const PostTitle = styled.h3`
   border-bottom: 1px solid white;
@@ -27,11 +29,11 @@ const PostTags = styled.h3`
   color: ${colorPalette.blue7};
   display: inline-block;
   font-family: ${mono};
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   font-weight: 400;
   position: relative;
-  top: 4px;
+  top: -1px;
 
   @media (max-width: 375px) {
     display: none;

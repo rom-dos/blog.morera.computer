@@ -9,9 +9,16 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     background-color: ${colorPalette.blue1};
     border-radius: 8px;
+    font-family: ${mono};
     line-height: 1.4;
     overflow: auto;
     padding: 0.28rem;
+  }
+  code {
+    font-size: 13px;
+  }
+  pre {
+    font-size: 12px;
   }
 `
 

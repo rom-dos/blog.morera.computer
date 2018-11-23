@@ -18,12 +18,12 @@ const BlogPostContent = styled.div`
 const BlogPostDate = styled.span`
   display: -block;
   font-family: ${mono};
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.4;
   text-align: right;
   position: relative;
-  top: 26px;
+  top: 20px;
 `
 
 const TitleGrid = styled.div`
