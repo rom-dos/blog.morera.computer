@@ -32,6 +32,10 @@ const PostTags = styled.h3`
   font-weight: 400;
   position: relative;
   top: 4px;
+
+  @media (max-width: 375px) {
+    display: none;
+  }
 `
 
 const PostDate = styled.h3`
@@ -61,6 +65,10 @@ const GridContainer = styled.div`
   line-height: 1.2;
   margin-bottom: -1.4rem;
   position: relative;
+
+  @media (max-width: 375px) {
+    grid-template-columns: 80% 20%;
+  }
 `
 
 export default ({ data }) => {
