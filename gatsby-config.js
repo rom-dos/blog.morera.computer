@@ -4,6 +4,18 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'blog.morera.computer',
+        short_name: 'blog.morera.computer',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#062437',
+        display: 'minimal-ui',
+        icon: 'src/images/icon.png'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
