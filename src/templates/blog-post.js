@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import {
@@ -13,20 +14,27 @@ import {
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <Layout>
-      <GlobalStyle />
-      <TitleGrid>
-        <BlogPostTitle>
-          {post.frontmatter.title}
-        </BlogPostTitle>
-        <BlogPostDate>
-          {data.markdownRemark.frontmatter.date} <br />
-          <em>{data.markdownRemark.timeToRead}' Read</em>
-        </BlogPostDate>
-      </TitleGrid>
-      <Spectrum />
-      <BlogPostContent dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Layout>
+    <div>
+      <Helmet>
+        <meta charSet='utf-8' />
+        <meta name='description' content="Nicholas Morera's blog on Software Engineering, JavaScript, Unix and macOS" />
+        <title>blog.morera.computer</title>
+      </Helmet>
+      <Layout>
+        <GlobalStyle />
+        <TitleGrid>
+          <BlogPostTitle>
+            {post.frontmatter.title}
+          </BlogPostTitle>
+          <BlogPostDate>
+            {data.markdownRemark.frontmatter.date} <br />
+            <em>{data.markdownRemark.timeToRead}' Read</em>
+          </BlogPostDate>
+        </TitleGrid>
+        <Spectrum />
+        <BlogPostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+      </Layout>
+    </div>
   )
 }
 

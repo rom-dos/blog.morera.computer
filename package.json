@@ -13,6 +13,7 @@
     "gatsby": "^2.0.33",
     "gatsby-plugin-manifest": "^2.0.10",
     "gatsby-plugin-offline": "^2.0.17",
+    "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-styled-components": "^3.0.3",
     "gatsby-remark-prismjs": "^3.0.3",
     "gatsby-source-filesystem": "^2.0.8",
@@ -20,6 +21,7 @@
     "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-helmet": "^5.2.0",
     "styled-components": "^4.1.1",
     "typeface-inconsolata": "0.0.54",
     "typeface-karla": "0.0.54"

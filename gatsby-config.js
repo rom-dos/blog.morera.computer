@@ -7,7 +7,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'blog.morera.computer',
-        short_name: 'blog.morera.computer',
+        short_name: 'blog',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#062437',
@@ -16,6 +16,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
