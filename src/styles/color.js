@@ -1,6 +1,3 @@
-import React from 'react'
-import styled from 'styled-components'
-
 export const colorPalette = {
   blue: `#062437`,
   blue0: `#f9f9fa`,

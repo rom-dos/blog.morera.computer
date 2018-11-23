@@ -1,77 +1,17 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from 'styled-components'
 import Layout from '../components/layout'
-import { colorPalette } from '../styles/color'
-import { mono, sansSerif, Spectrum } from '../styles/styles'
+import {
+  Spectrum,
+  PostCount,
+  PostTitle,
+  PostTags,
+  PostDate,
+  PostArrow,
+  GridContainer
+} from '../styles/styles'
 require('typeface-karla')
 require('typeface-inconsolata')
-
-const PostCount = styled.p`
-  color: ${colorPalette.blue8};
-  font-family: ${mono};
-  font-size: 16px;
-`
-const PostTitle = styled.h3`
-  border-bottom: 1px solid white;
-  color: ${colorPalette.blue};
-  display: inline-block;
-  font-family: ${sansSerif};
-  font-size: 16px;
-  font-weight: 400;
-
-  &:hover {
-    border-bottom: 1px solid ${colorPalette.blue8};
-  }
-`
-
-const PostTags = styled.h3`
-  color: ${colorPalette.blue7};
-  display: inline-block;
-  font-family: ${mono};
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 400;
-  position: relative;
-  top: -1px;
-
-  @media (max-width: 375px) {
-    display: none;
-  }
-`
-
-const PostDate = styled.h3`
-  color: ${colorPalette.blue9};
-  display: inline-block;
-  font-family: ${sansSerif};
-  font-size: 14px; 
-  font-weight: 400;
-  text-align: right;
-`
-
-const PostArrow = styled.span`
-  font-size: 24px;
-  line-height: 0.8;
-  position: relative; 
-  top: 2px;
-  margin-right: 4px;
-
-  &:hover {
-    color: ${colorPalette.blue7};
-  }
-`
-
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: 60% 20% 20%;
-  line-height: 1.2;
-  margin-bottom: -1.4rem;
-  position: relative;
-
-  @media (max-width: 375px) {
-    grid-template-columns: 80% 20%;
-  }
-`
 
 export default ({ data }) => {
   return (
