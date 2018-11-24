@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `blog.morera.computer`
+    title: `blog.morera.computer`,
+    siteUrl: `https://blog-moreracomputer.surge.sh`
   },
   plugins: [
     {
@@ -17,6 +18,14 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: `https://blog-moreracomputer.surge.sh`,
+        sitemap: `https://blog-moreracomputer.surge.sh/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
