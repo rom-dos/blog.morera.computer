@@ -38,6 +38,15 @@ export const GlobalStyle = createGlobalStyle`
   pre {
     font-size: 12px;
   }
+  a {
+    color: ${colorPalette.blue9};
+    font-weight: 800;
+    text-decoration: none;
+
+    &:hover {
+      color: ${colorPalette.blue5};
+    }
+  }
 `
 
 /* Layout */
@@ -98,7 +107,7 @@ export const PostTags = styled.h3`
   font-style: italic;
   font-weight: 400;
   position: relative;
-  top: -1px;
+  top: 5px;
 
   @media (max-width: 375px) {
     display: none;
@@ -111,7 +120,9 @@ export const PostDate = styled.h3`
   font-family: ${sansSerif};
   font-size: 14px; 
   font-weight: 400;
+  position: relative;
   text-align: right;
+  top: 5px;
 `
 
 export const PostArrow = styled.span`

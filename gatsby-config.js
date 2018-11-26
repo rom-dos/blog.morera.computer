@@ -33,10 +33,17 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 700
+            }
+          },
           {
             resolve: `gatsby-remark-prismjs`
           }
